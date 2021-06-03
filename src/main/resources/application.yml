@@ -1,0 +1,32 @@
+h2:
+  console:
+    enabled: true
+logging:
+  level:
+    org:
+      hibernate: ERROR
+      springframework:
+        web: DEBUG
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
+server:
+  port: 8090
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    username: sa
+    password: sa
+    url: jdbc:h2:mem:elmenus
+  h2:
+    console:
+      path: /h2-console
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+  profiles:
+    include: h2
+webclientexample:
+  postsapi:
+    h2-console-port: 8091
+    host: https://jsonplaceholder.typicode.com
